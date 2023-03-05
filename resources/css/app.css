@@ -1,0 +1,11 @@
+@font-face {
+    font-family: Inter;
+    src: url("../fonts/Inter/Inter-Regular.ttf");
+}
+
+/* Set styles for the body */
+body {
+    font-family: Inter, sans-serif;
+}
+
+

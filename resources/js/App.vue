@@ -1,12 +1,13 @@
-<template>
-    <h1>Conf Olymp App</h1>
-</template>
+<script setup>
 
-<script>
-export default {
-    name: "App"
-}
+import MainLayout from "@/layouts/MainLayout.vue";
 </script>
+
+<template>
+    <MainLayout>
+        <router-view></router-view>
+    </MainLayout>
+</template>
 
 <style scoped>
 
