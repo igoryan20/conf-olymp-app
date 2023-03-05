@@ -10,6 +10,11 @@ const routes = [
         path: '/login',
         name: 'login',
         component: () => import("../pages/Login.vue")
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        name: '404',
+        component: () => import("../pages/errors/404.vue")
     }
 ];
 
