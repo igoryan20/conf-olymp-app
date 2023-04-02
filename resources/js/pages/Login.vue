@@ -1,34 +1,33 @@
 <template>
     <div class="login">
-        <div class="login-header">
-            <h2 class="text-center">Student Login</h2>
-        </div>
         <div class="login-body">
             <form>
                 <div class="form-group">
-                    <label for="username">Имя пользователя или электронная почта:</label>
-                    <input type="email" class="form-control" id="username" v-model="email" placeholder="Enter username">
+                    <label for="username">Имя пользователя / Email</label>
+                    <input type="email" class="form-control" id="username" v-model="email" >
                 </div>
                 <div class="form-group">
                     <label for="password">Пароль:</label>
-                    <input type="password" class="form-control" id="password" v-model="password" placeholder="Enter password">
+                    <input type="password" class="form-control" id="password" v-model="password">
                 </div>
-                <button type="submit" class="btn btn-primary btn-block" @click.prevent="login">
+                <CButton type="submit" class="primary float-end" @click.prevent="login">
                     <span v-if="loading">
                         <i class="fa fa-spinner fa-spin"></i> Загрузка...
                     </span>
                     <span v-else>Войти</span>
-                </button>
+                </CButton>
             </form>
-            <div class="mt-4">
-                <p>Нет аккаунта? <router-link to="/registration">Зарегестрируйся.</router-link></p>
+            <div class="no-account">
+                <p>Нет аккаунта? <router-link to="/register">Зарегестрируйся.</router-link></p>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import CButton from "@/components/ui/CButton.vue";
 export default {
+    components: {CButton},
     data() {
         return {
             email: '',
@@ -58,51 +57,27 @@ export default {
 
 <style>
 .login {
-    height: 100vh;
-    background-color: #f8f8f8;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.login-header {
-    margin-bottom: 2rem;
-}
-
-.login-header h2 {
-    font-size: 3rem;
-    color: #0077cc;
-}
-
 .login-body {
     width: 100%;
     max-width: 400px;
     background-color: #fff;
-    padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.login-body form {
-    margin-bottom: 1rem;
+    padding: 4rem 4rem 0 4rem;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(32, 0, 123, 0.2);
 }
 
 .login-body label {
     font-weight: bold;
 }
 
-.login-body input {
-    border-radius: 0;
-    border-color: #ccc;
-}
-
-.login-body input:focus {
-    border-color: #0077cc;
-}
-
 .login-body button {
-    margin-top: 2rem;
     border-radius: 0;
     background-color: #0077cc;
     border-color: #0077cc;
@@ -123,5 +98,9 @@ export default {
 
 .login-body a:hover {
     text-decoration: underline;
+}
+
+.no-account {
+    margin-top: 5rem;
 }
 </style>

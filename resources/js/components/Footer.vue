@@ -1,19 +1,10 @@
 <template>
     <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-md-4">
+            <div class="row flex justify-content-between">
+                <div class="col-sm-2 col-md-4">
                     <h5 class="text-uppercase mb-3">О нас</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at arcu ligula. Mauris euismod lectus nec mi luctus, vel posuere velit faucibus.</p>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <h5 class="text-uppercase mb-3">Быстрые ссылки</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Домой</a></li>
-                        <li><a href="#">Курсы</a></li>
-                        <li><a href="#">Блок</a></li>
-                        <li><a href="#">Свяжитесь с нами</a></li>
-                    </ul>
+                    <p>В нашей компании мы стремимся предоставлять высококачественные продукты и услуги для удовлетворения потребностей наших клиентов. Уделяя особое внимание инновациям и совершенству, мы стремимся добиваться наилучших возможных результатов и выстраивать прочные, долгосрочные отношения с нашими клиентами.</p>
                 </div>
                 <div class="col-md-4">
                     <h5 class="text-uppercase mb-3">Подпишитесь</h5>
@@ -22,7 +13,7 @@
                         <div class="form-group">
                             <input type="email" class="form-control" id="email" placeholder="Введите вашу почту">
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Подписаться</button>
+                        <CButton type="submit" class="primary">Подписаться</CButton>
                     </form>
                 </div>
             </div>
@@ -31,7 +22,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p>&copy; 2023 Conf Olymp. Все права защищены.</p>
+                    <p>&copy; 2023 ConfOlympApp. Все права защищены.</p>
                 </div>
                 <div class="col-md-6">
                     <ul class="list-inline">
@@ -45,5 +36,15 @@
 </template>
 
 <style scoped>
-
+footer {
+    margin-top: 5rem;
+    padding: 5rem;
+    box-shadow: 0 -4px 10px rgba(49, 107, 255, 0.25);
+}
 </style>
+<script>
+import CButton from "@/components/ui/CButton.vue";
+export default {
+    components: {CButton}
+}
+</script>

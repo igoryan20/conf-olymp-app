@@ -8,18 +8,22 @@
     font-family: "Montserrat Alternates", sans-serif;
 }
 
-h1 {
-    font-weight: bold;
-    color: #20007B;
-}
-
-h2 {
+h1, h2, h3, h4, h5, label {
     font-weight: bold;
     color: #20007B;
 }
 
 p {
     color: #316BFF;
+}
+
+input {
+    border-radius: 20px;
+    border-color: #20007B;
+}
+
+input:focus {
+    border-color: #316BFF;
 }
 
 

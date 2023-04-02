@@ -20,7 +20,7 @@ export default {
 <style scoped>
 .banner {
     margin-top: 3rem;
-    height: 50%;
+    /*height: 50%;*/
 }
 h1 {
     font-weight: bold;
@@ -41,11 +41,11 @@ p {
 }
 
 img {
-    position: relative;
-    top: 0;
-    right: 0;
-    border-radius: 0 100px 100px 0;
-    width: 50%;
-    height: 80%;
+    /*position: relative;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    /*border-radius: 0 100px 100px 0;*/
+    width: 60%;
+    /*height: 80%;*/
 }
 </style>

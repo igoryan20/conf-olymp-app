@@ -12,7 +12,7 @@ const routes = [
         component: () => import("../pages/Login.vue")
     },
     {
-        path: '/registration',
+        path: '/register',
         name: 'registration',
         component: () => import("../pages/Registration.vue")
     },
@@ -45,11 +45,6 @@ const routes = [
         path: '/conference-details',
         name: 'conference-details',
         component: () => import("../pages/ConferenceDetails.vue")
-    },
-    {
-        path: '/who-register',
-        name: 'who-register',
-        component: () => import("../pages/WhoRegister.vue")
     },
     {
         path: '/:pathMatch(.*)*',
