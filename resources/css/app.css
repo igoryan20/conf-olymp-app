@@ -1,11 +1,25 @@
 @font-face {
-    font-family: Inter;
-    src: url("../fonts/Inter/Inter-Regular.ttf");
+    font-family: "Montserrat Alternates";
+    src: url("../fonts/Montserrat Alternates/MontserratAlternates-Regular.ttf");
 }
 
 /* Set styles for the body */
-body {
-    font-family: Inter, sans-serif;
+* {
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+h1 {
+    font-weight: bold;
+    color: #20007B;
+}
+
+h2 {
+    font-weight: bold;
+    color: #20007B;
+}
+
+p {
+    color: #316BFF;
 }
 
 

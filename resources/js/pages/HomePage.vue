@@ -1,24 +1,31 @@
-<script setup>
-import { useRouter } from "vue-router";
-import MainLayout from "@/layouts/MainLayout.vue";
-import Banner from "@/components/Banner.vue";
-import About from "@/components/About.vue";
-import Schedule from "@/components/Schedule.vue";
-
-const router = useRouter();
-
-function exploreEvents() {
-    router.push('/events');
-}
-</script>
-
 <template>
-    <main>
-        <Banner />
-        <About />
-        <Schedule />
-    </main>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <Banner />
+                <Delimiter />
+                <About />
+                <Delimiter />
+                <div>
+                    <h1>Возможности</h1>
+                    <div>
+                        <h2></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
+
+<script>
+import Banner from "@/components/Banner.vue";
+import Delimiter from "@/components/ui/Delimiter.vue";
+import About from "@/components/About.vue";
+export default {
+    name: "HomePage",
+    components: {About, Delimiter, Banner},
+};
+</script>
 
 <style scoped>
 

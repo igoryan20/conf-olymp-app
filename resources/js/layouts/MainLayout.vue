@@ -1,6 +1,6 @@
 <template>
     <Header />
-    <slot></slot>
+        <slot></slot>
     <Footer />
 </template>
 

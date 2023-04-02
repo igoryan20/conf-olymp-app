@@ -1,16 +1,20 @@
+<script setup>
+defineProps(['label', 'type', 'required', 'id', 'modelValue'])
+defineEmits(['update:modelValue'])
+</script>
+
 <template>
     <div class="form-group">
         <label :for="id">{{ label }}</label>
-        <input :type="type" :id="id" :required="required">
+        <input
+            :type="type"
+            :id="id"
+            :required="required"
+            :value="modelValue"
+            @input="$emit('update:modelValue', $event.target.value)"
+        />
     </div>
 </template>
-
-<script>
-export default {
-    name: "CustomInput",
-    props: ['label', 'type', 'required', 'id']
-}
-</script>
 
 <style scoped>
 

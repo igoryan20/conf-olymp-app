@@ -1,58 +1,50 @@
 <template>
-    <div class="banner">
-        <div class="banner-darkness">
-            <h1>Добро пожаловать на студенченские конференции</h1>
-            <p>Присоеденись к нашим мероприятиям и докладчикам</p>
-            <router-link to="/schedule" class="cta">Посмотреть расписание</router-link>
+    <div class="banner d-flex">
+        <div class="description d-flex flex-column">
+            <h1>ConfOlympApp: Идеальное веб-приложение для планирования студенческих конференций</h1>
+            <p>Планирование конференции может быть напряженным занятием, но с ConfOlympApp это проще простого! Попрощайтесь с бумажными регистрациями и конфликтами в расписании. Подпишитесь прямо сейчас на идеальное веб-приложение для организации студенческих конференций и управления ими.</p>
+            <CButton class="secondary w-100">Зарегестрироваться</CButton>
         </div>
+        <img src="../../images/students.png" alt="">
     </div>
 </template>
 
 <script>
+import CButton from "@/components/ui/CButton.vue";
 export default {
-    name: "Banner"
+    name: "Banner",
+    components: {CButton}
 }
 </script>
 
 <style scoped>
 .banner {
-    color: #fff;
-    text-align: center;
-    padding: 150px 10%;
-    background-image: url("../../images/students.png");
-    background-size: cover;
-    background-position: top;
+    margin-top: 3rem;
+    height: 50%;
+}
+h1 {
+    font-weight: bold;
+    color: #20007B;
 }
 
-.banner-darkness {
-    background-color: rgba(50, 50, 50, 0.7);
-    padding: 40px;
-    border-radius: 20px;
+p {
+    font-weight: bold;
+    color: #316BFF;
 }
 
-.banner h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
+.description {
+    position: relative;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 11;
 }
 
-.banner p {
-    font-size: 24px;
-    margin-bottom: 40px;
-}
-
-.cta {
-    display: inline-block;
-    background-color: #fff;
-    color: #0077c0;
-    padding: 15px 30px;
-    border-radius: 5px;
-    font-size: 18px;
-    text-decoration: none;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-
-.cta:hover {
-    background-color: #0077c0;
-    color: #fff;
+img {
+    position: relative;
+    top: 0;
+    right: 0;
+    border-radius: 0 100px 100px 0;
+    width: 50%;
 }
 </style>
