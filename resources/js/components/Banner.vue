@@ -46,5 +46,6 @@ img {
     right: 0;
     border-radius: 0 100px 100px 0;
     width: 50%;
+    height: 80%;
 }
 </style>

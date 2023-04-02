@@ -2,7 +2,7 @@
     <header class="d-flex justify-content-between">
         <img src="../../images/brand.svg" width="60" />
         <ul class="d-flex flex-wrap align-items-center">
-            <li><router-link to="#about_platform">О платформе</router-link></li>
+            <li><router-link to="#about">О платформе</router-link></li>
             <li><router-link to="#features">Возможнсти</router-link></li>
         </ul>
         <div class="d-flex flex-wrap">
