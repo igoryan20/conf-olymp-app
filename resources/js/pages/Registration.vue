@@ -9,32 +9,20 @@
                     <input type="text" id="name" v-model="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Фамилия</label>
-                    <input type="text" id="name" v-model="name" required>
+                    <label for="surname">Фамилия</label>
+                    <input type="text" id="surname" v-model="surname" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Отчество</label>
-                    <input type="text" id="name" v-model="name" required>
+                    <label for="middlename">Отчество</label>
+                    <input type="text" id="middlename" v-model="middlename">
                 </div>
             </div>
             <div class="form-group">
-                <label for="email">ВУЗ</label>
-                <input type="email" id="email" v-model="email" required>
+                <label for="username">Имя пользователя</label>
+                <input type="text" id="username" v-model="username" required>
             </div>
             <div class="form-group">
-                <label for="email">Направление подготовкм</label>
-                <input type="email" id="email" v-model="email" required>
-            </div>
-            <div class="form-group">
-                <label for="name">Имя пользователя:</label>
-                <input type="text" id="name" v-model="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Электронная почта в домене ВУЗа:</label>
-                <input type="email" id="email" v-model="email" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Альтернативная почта для уведомлений:</label>
+                <label for="email">Электронная почта</label>
                 <input type="email" id="email" v-model="email" required>
             </div>
             <div class="form-group">
@@ -45,7 +33,7 @@
                 <label for="confirm-password">Подтвердите пароль:</label>
                 <input type="password" id="confirm-password" v-model="password_confirmation" required>
             </div>
-            <button type="submit" class="btn-register">Зарегестрироваться</button>
+            <CButton type="submit" class="primary">Зарегестрироваться</CButton>
             <div class="mt-4">
                 <p>Уже есть аккаунт? <router-link to="/login">Войдите</router-link></p>
             </div>
@@ -54,10 +42,15 @@
 </template>
 
 <script>
+import CButton from "@/components/ui/CButton.vue";
 export default {
+    components: {CButton},
     data() {
         return {
             name: '',
+            surname: '',
+            middlename: '',
+            username: '',
             email: '',
             password: '',
             password_confirmation: '',
@@ -65,16 +58,28 @@ export default {
     },
     methods: {
         register() {
-            axios.post('/register', {
-                name: this.name,
-                email: this.email,
-                password: this.password,
-                password_confirmation: this.password_confirmation
-            }).then(response => {
-                console.log(response)
-            }).catch(error => {
-                console.log(error.response)
-            });
+            if (this.validate()) {
+                axios.post('/register', {
+                    name: this.name,
+                    surname: this.surname,
+                    middlename: this.middlename,
+                    username: this.username,
+                    email: this.email,
+                    password: this.password,
+                    password_confirmation: this.password_confirmation
+                }).then(response => {
+                    console.log(response)
+                }).catch(error => {
+                    console.log(error.response)
+                });
+            }
+            console.log("Password not confirmed")
+        },
+        validate() {
+            if (this.password === this.password_confirmation) {
+                return true;
+            }
+            return false;
         }
     }
 }
@@ -138,21 +143,5 @@ input:focus {
     outline: none;
     border-color: #0077cc;
     box-shadow: 0 0 0 2px rgba(0, 119, 204, 0.2);
-}
-
-.btn-register {
-    background-color: #0077cc;
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.btn-register:hover {
-    background-color: #005ea6;
 }
 </style>

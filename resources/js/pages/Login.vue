@@ -4,7 +4,7 @@
             <form>
                 <div class="form-group">
                     <label for="username">Имя пользователя / Email</label>
-                    <input type="email" class="form-control" id="username" v-model="email" >
+                    <input type="email" class="form-control" id="username" v-model="username" >
                 </div>
                 <div class="form-group">
                     <label for="password">Пароль:</label>
@@ -30,7 +30,7 @@ export default {
     components: {CButton},
     data() {
         return {
-            email: '',
+            username: '',
             password: '',
             loading: false
         }
@@ -40,7 +40,7 @@ export default {
             this.loading = true;
             axios.post('/csrf-cookie').then(response => {
                 axios.post('/login', {
-                    email: this.email,
+                    username: this.username,
                     password: this.password,
                 }).then(response => {
                     console.log(response);
