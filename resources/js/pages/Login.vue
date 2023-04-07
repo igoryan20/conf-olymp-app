@@ -1,3 +1,42 @@
+<script setup>
+import CButton from "@/components/ui/CButton.vue";
+import {useUserStore} from "@/store/userStore";
+import axios from "axios";
+import {ref} from "vue";
+
+const user = useUserStore()
+
+const apiClient = axios.create({
+    baseURL: "http://conf-olymp-app",
+    withCredentials: true
+});
+
+
+const username = ref("")
+const password = ref("")
+const loading = ref(false)
+
+function login() {
+    loading.value = true;
+    apiClient.post('/csrf-cookie').then(response => {
+        apiClient.post('/login', {
+            username: username.value,
+            password: password.value,
+        }).then(response => {
+            apiClient.get('api/user')
+                .then((response => {
+
+                }));
+            console.log("OK");
+        }).catch(error => {
+            console.log("ERROR");
+        }).finally(() => {
+            loading.value = false;
+        });
+    });
+}
+</script>
+
 <template>
     <div class="login">
         <div class="login-body">
@@ -24,38 +63,7 @@
     </div>
 </template>
 
-<script>
-import CButton from "@/components/ui/CButton.vue";
-export default {
-    components: {CButton},
-    data() {
-        return {
-            username: '',
-            password: '',
-            loading: false
-        }
-    },
-    methods: {
-        login() {
-            this.loading = true;
-            axios.post('/csrf-cookie').then(response => {
-                axios.post('/login', {
-                    username: this.username,
-                    password: this.password,
-                }).then(response => {
-                    console.log(response);
-                    this.loading = false;
-                }).catch(error => {
-                    console.log(error.response);
-                    this.loading = false;
-                });
-            });
-        }
-    }
-}
-</script>
-
-<style>
+<style scoped>
 .login {
     height: 80vh;
     display: flex;
