@@ -37,7 +37,6 @@
 
 <style scoped>
 footer {
-    display: none;
     position: relative;
     bottom: 0;
     width: 100%;

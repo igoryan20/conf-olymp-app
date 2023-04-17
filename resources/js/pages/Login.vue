@@ -85,17 +85,6 @@ function login() {
     font-weight: bold;
 }
 
-.login-body button {
-    border-radius: 0;
-    background-color: #0077cc;
-    border-color: #0077cc;
-}
-
-.login-body button:hover {
-    background-color: #005ea6;
-    border-color: #005ea6;
-}
-
 .login-body p {
     text-align: center;
 }

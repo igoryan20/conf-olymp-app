@@ -4,20 +4,40 @@ import CButton from "@/components/ui/CButton.vue";
 import CRadioButton from "@/components/ui/CRadioButton.vue";
 import {ref} from "vue";
 
-function nextPage()
-{
+const photos = ref([]);
+
+function nextPage() {
     const step1 = document.querySelector('.step-1');
     step1.classList.add('hidden');
     const step2 = document.querySelector('.step-2');
     step2.classList.remove('hidden');
 }
 
-function previousPage()
-{
+function previousPage() {
     const step2 = document.querySelector('.step-2');
     step2.classList.add('hidden');
     const step1 = document.querySelector('.step-1');
     step1.classList.remove('hidden');
+}
+
+function setMain(target) {
+    let main = document.getElementById('main')
+    let clientRect = target.target.getBoundingClientRect()
+    let x = (clientRect.right + clientRect.left) / 2
+    main.style.position = "absolute"
+    main.style.left = (x - 70) + 'px'
+}
+
+function setPreview(event) {
+    let file = event.target.files[0];
+    photos.value.push(file);
+
+    const reader = new FileReader();
+    reader.addEventListener('load', (event) => {
+        console.log(event.target.result)
+        photos.value.push({ "url": event.target.result});
+    });
+    reader.readAsDataURL(file);
 }
 
 </script>
@@ -27,16 +47,20 @@ function previousPage()
         <div class="step-1">
             <h1>Создание конференции</h1>
             <h4>Шаг 1 из 2. Заполнение информации</h4>
-            <label>Прикрепить фото <img class="plus-in-circle" src="../../images/plus-in-circle.svg" /></label>
-            <div class="d-flex justify-content-center">
-                <img class="preview" src="../../images/student.jpg">
-                <img class="preview" src="../../images/student.jpg">
+            <label>Прикрепить фото <label for="upload"><img class="plus-in-circle" src="../../images/plus-button.svg" /></label></label>
+            <input @change="setPreview" id="upload" type="file" class="hidden" accept="image/png, image/jpeg" />
+            <div v-if="photos.length">
+                <div class="d-flex justify-content-center mt-4">
+                    <img @click="setMain" class="preview" v-for="photo in photos" :src="photo.url"/>
+<!--                    <img @click="setMain" class="preview" src="../../images/students.png">-->
+<!--                    <img @click="setMain" class="preview" src="../../images/brand.svg">-->
+                </div>
+                <div id="main" class="d-flex flex-column align-items-center mt-4">
+                    <img class="tryangle" src="../../images/tryangle.svg" />
+                    <h5 class="regular" >Главное фото</h5>
+                </div>
             </div>
-            <div class="d-flex flex-column align-items-center">
-                <img class="tryangle" src="../../images/tryangle.svg" />
-                <h5 class="regular" >Главное фото</h5>
-            </div>
-            <div class="form-group">
+            <div class="form-group" style="margin-top: 7rem">
                 <label for="name">Название <span>*</span></label>
                 <input type="text" class="form-control" id="name" v-model="name">
             </div>
@@ -86,7 +110,7 @@ function previousPage()
                 <input type="text" class="form-control" id="name" v-model="name">
             </div>
             <div class="form-group">
-                <label for="name">Требования к оформлению <img class="plus-in-circle" src="../../images/plus-in-circle.svg" /> <span>*</span></label>
+                <label for="name">Требования к оформлению <img class="plus-in-circle" src="../../images/plus-in-circle.svg" /> df<span>*</span></label>
                 <div class="d-flex justify-content-center">
                     <div class="d-flex align-items-center me-4">
                         <img class="file" src="../../images/file-regular.svg" width="25" alt="">
@@ -112,7 +136,7 @@ function previousPage()
 }
 
 .plus-in-circle {
-
+    margin-left: 0.5rem;
 }
 
 .plus-in-circle:hover {
@@ -120,7 +144,9 @@ function previousPage()
 }
 
 .preview {
-    width: 50%;
+    height: 300px;
+    cursor: pointer;
+    margin-left: 2rem;
 }
 
 .regular {

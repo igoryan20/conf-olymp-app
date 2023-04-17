@@ -3,7 +3,7 @@
         <router-link to="/"><img src="../../images/brand.svg" width="60" /></router-link>
         <ul class="d-flex flex-wrap align-items-center">
             <li><router-link to="/#about">О платформе</router-link></li>
-            <li><router-link to="/#features">Возможнсти</router-link></li>
+            <li><router-link to="/#features">Возможности</router-link></li>
         </ul>
         <div class="d-flex flex-wrap">
             <router-link to="/login"><CButton class="primary">Войти</CButton></router-link>
