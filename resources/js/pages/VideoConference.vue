@@ -1,5 +1,9 @@
 <template>
-    <div id="meet"></div>
+    <div>
+        <div id="meet">
+            <img src="../../images/brand.svg">
+        </div>
+    </div>
 </template>
 
 <script>
@@ -37,5 +41,13 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
+}
+img {
+    position: fixed;
+    top: 1.5rem;
+    left: 2rem;
+    width: 80px;
+    z-index: 1;
+    float: right;
 }
 </style>

@@ -37,6 +37,10 @@
 
 <style scoped>
 footer {
+    display: none;
+    position: relative;
+    bottom: 0;
+    width: 100%;
     margin-top: 5rem;
     padding: 5rem;
     box-shadow: 0 -4px 10px rgba(49, 107, 255, 0.25);
