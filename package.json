@@ -5,6 +5,7 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@rollup/plugin-inject": "^5.0.3",
         "axios": "^1.1.2",
         "laravel-vite-plugin": "^0.7.2",
         "vite": "^4.0.0"
@@ -17,7 +18,9 @@
         "@fortawesome/vue-fontawesome": "^3.0.3",
         "@vitejs/plugin-vue": "^4.0.0",
         "bootstrap": "^5.2.3",
+        "bootstrap-vue": "^2.23.1",
         "font-awesome": "^4.7.0",
+        "jquery": "^3.7.0",
         "normalize.css": "^8.0.1",
         "pinia": "^2.0.33",
         "vue": "^3.2.47",

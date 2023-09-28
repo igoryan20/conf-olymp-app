@@ -14,39 +14,35 @@ export default {
 <style scoped>
 button {
     background: white;
-    border-radius: 10px;
     border: none;
     color: black;
-    padding: 10px 20px;
+    padding: 5px 30px;
     margin: 5px 5px;
     font-weight: bold;
     cursor: pointer;
 }
 
-button:hover {
-    border: 1px solid black;
-}
-
 .primary {
-    background: #20007B;
+    background: #51A230;
     color: white;
+    border: 1px solid #3E7C23;
 }
 
 .primary:hover {
-    background: rgb(32, 0, 123, 0.8);
+    background: #3E7C23;
     color: white;
-    border: none;
+    border: 1px solid #3E7C23;
 }
 
 .secondary {
     background: white;
-    color: #20007B;
-    border: 1px solid #20007B;
+    color: #51A230;
+    border: 1px solid #51A230;
 }
 
 .secondary:hover {
-    background: #20007B;
+    background: #51A230;
     color: white;
-    border: 1px solid #20007B;
+    border: 1px solid #51A230;
 }
 </style>

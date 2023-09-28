@@ -42,6 +42,31 @@ const routes = [
         component: () => import("../pages/Conferences.vue")
     },
     {
+        path: '/archive',
+        name: 'archive',
+        component: () => import("../pages/Archive.vue")
+    },
+    {
+        path: '/tvorcheskie-raboty',
+        name: 'tvorcheskie-raboty',
+        component: () => import("../pages/TvorcheskieRaboty.vue")
+    },
+    {
+        path: '/attached-works',
+        name: 'attached-works',
+        component: () => import("../pages/AttachedWorks.vue")
+    },
+    {
+        path: '/events',
+        name: 'events',
+        component: () => import("../pages/Events.vue")
+    },
+    {
+        path: '/deadlines',
+        name: 'deadlines',
+        component: () => import("../pages/Deadlines.vue")
+    },
+    {
         path: '/conference-details',
         name: 'conference-details',
         component: () => import("../pages/ConferenceDetails.vue")
@@ -54,6 +79,11 @@ const routes = [
 ];
 
 const router = createRouter({
+    scrollBehavior(to, fromm, savedPosition) {
+        if (to.hash) {
+            return {el: to.hash}
+        }
+    },
     history: createWebHistory(),
     routes,
 });

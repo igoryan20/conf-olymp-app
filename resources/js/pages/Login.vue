@@ -38,24 +38,26 @@ function login() {
 </script>
 
 <template>
-    <div class="login">
-        <div class="login-body">
-            <form>
-                <div class="form-group">
-                    <label for="username">Имя пользователя / Email</label>
-                    <input type="email" class="form-control" id="username" v-model="username" >
-                </div>
-                <div class="form-group">
-                    <label for="password">Пароль:</label>
-                    <input type="password" class="form-control" id="password" v-model="password">
-                </div>
-                <CButton type="submit" class="primary float-end" @click.prevent="login">
-                    <span v-if="loading">
-                        <i class="fa fa-spinner fa-spin"></i> Загрузка...
-                    </span>
-                    <span v-else>Войти</span>
-                </CButton>
-            </form>
+    <div class="login container">
+        <div class="d-flex flex-column">
+            <div class="d-flex justify-content-center login-form">
+                <form>
+                    <div class="form-group">
+                        <label for="username">Имя пользователя / Email</label>
+                        <input type="email" class="form-control" id="username" v-model="username" >
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль:</label>
+                        <input type="password" class="form-control" id="password" v-model="password">
+                    </div>
+                    <CButton type="submit" class="primary float-end" @click.prevent="login">
+                <span v-if="loading">
+                    <i class="fa fa-spinner fa-spin"></i> Загрузка...
+                </span>
+                        <span v-else>Войти</span>
+                    </CButton>
+                </form>
+            </div>
             <div class="no-account">
                 <p>Нет аккаунта? <router-link to="/register">Зарегестрируйся.</router-link></p>
             </div>
@@ -65,39 +67,36 @@ function login() {
 
 <style scoped>
 .login {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 10rem;
 }
 
-.login-body {
-    width: 100%;
-    max-width: 400px;
-    background-color: #fff;
-    padding: 4rem 4rem 0 4rem;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(32, 0, 123, 0.2);
+label {
+    color: #3E7C23;
+    font-size: 14pt;
+    margin-bottom: 0.5rem;
 }
 
-.login-body label {
-    font-weight: bold;
-}
-
-.login-body p {
-    text-align: center;
-}
-
-.login-body a {
-    color: #0077cc;
-}
-
-.login-body a:hover {
-    text-decoration: underline;
+input {
+    border-color: #3E7C23;
+    max-width: 500px;
 }
 
 .no-account {
-    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    color: #51A230;
+}
+
+a {
+    color: #51A230;
+}
+
+form {
+    margin-top: 15rem;
+    width: 500px;
 }
 </style>

@@ -1,36 +1,33 @@
 <template>
     <footer class="footer">
-        <div class="container">
-            <div class="row flex justify-content-between">
-                <div class="col-sm-2 col-md-4">
-                    <h5 class="text-uppercase mb-3">О нас</h5>
-                    <p>В нашей компании мы стремимся предоставлять высококачественные продукты и услуги для удовлетворения потребностей наших клиентов. Уделяя особое внимание инновациям и совершенству, мы стремимся добиваться наилучших возможных результатов и выстраивать прочные, долгосрочные отношения с нашими клиентами.</p>
+        <div class="container d-flex justify-content-between">
+            <div class="d-flex">
+                <img class="mirea" src="../../images/mirea.png" width="150" alt="">
+                <div>
+                    <p>Москва, Пр-т Вернадского, д. 78</p>
+                    <a href="tel:+7992156565">+7 (499) 215-65-65</a> <br />
+                    <a href="mailto:rector@mirea.ru">rector@mirea.ru</a>
+                    <div class="mt-2">
+                        <img class="social-network" src="../../images/ok.svg" alt="" width="30">
+                        <img class="social-network" src="../../images/tiktok.svg" alt="" width="30">
+                        <img class="social-network" src="../../images/youtube.svg" alt="" width="30">
+                        <img class="social-network" src="../../images/telegram.svg" alt="" width="30">
+                        <img class="social-network" src="../../images/vk.svg" alt="" width="30">
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h5 class="text-uppercase mb-3">Подпишитесь</h5>
-                    <p>Подпишитесь на нашу рассылку новостей, чтобы получать последние обновления о наших курсах и ресурсах.</p>
-                    <form>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="Введите вашу почту">
-                        </div>
-                        <CButton type="submit" class="primary">Подписаться</CButton>
-                    </form>
+            </div>
+            <div>
+                <p>Подписка на обновления</p>
+                <div class="d-flex">
+                    <input class="me-2" placeholder="Введите ваш E-mail" />
+                    <CButton class="primary">ОК</CButton>
                 </div>
             </div>
         </div>
         <hr>
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; 2023 ConfOlympApp. Все права защищены.</p>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a href="#">Условия</a></li>
-                        <li class="list-inline-item"><a href="#">Политика конфиденциальности</a></li>
-                    </ul>
-                </div>
-            </div>
+                    <p>&copy 2023 МИРЭА - Российский технологический университет
+                        Международная научно-практическая конференция «Профессиональная коммуникация от термина к дискурсу»</p>
         </div>
     </footer>
 </template>
@@ -42,8 +39,56 @@ footer {
     width: 100%;
     margin-top: 5rem;
     padding: 5rem;
-    box-shadow: 0 -4px 10px rgba(49, 107, 255, 0.25);
+    box-shadow: 0 -4px 10px rgba(81, 162, 48, 0.25);
 }
+
+p {
+    color: #51A230;
+    margin: 0;
+}
+
+a {
+    color: #51A230;
+    margin: 0;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.mirea {
+    margin-right: 2rem;
+}
+
+.mirea:hover {
+    cursor: pointer;
+}
+
+.social-network {
+    margin-right: 0.5rem;
+}
+
+.social-network:hover {
+    cursor: pointer;
+}
+
+input {
+    border: 1px solid #3E7C23;
+}
+
+input:focus {
+    border: 1px solid #3E7C23;
+}
+
+input:active {
+    border: 1px solid #3E7C23;
+}
+
+input::placeholder {
+    color: #D9D9D9;
+}
+
 </style>
 <script>
 import CButton from "@/components/ui/CButton.vue";

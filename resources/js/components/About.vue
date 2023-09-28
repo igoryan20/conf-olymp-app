@@ -1,13 +1,29 @@
 <template>
     <div id="about" class="about">
-        <h1>О платформе</h1>
-        <p>ConfOlympApp - это невероятно полезное веб-приложение, которое позволяет вам с легкостью управлять своей конференцией. С помощью нашего платформенного блока вы можете легко добавлять и удалять функции по мере необходимости, настраивая платформу в соответствии с вашими конкретными потребностями в проведении конференций. Независимо от того, нужно ли вам добавить новую сессию, создать профиль спикера или обновить расписание конференции, наш блок платформы позволяет легко сделать это всего за несколько кликов. Кроме того, благодаря нашему удобному интерфейсу вам не нужно быть техническим экспертом, чтобы ориентироваться в блоке платформы. Итак, если вы ищете гибкое и настраиваемое решение для управления вашей студенческой конференцией, обратите внимание на блок платформы ConfOlympApp.</p>
+        <p>
+            {{ this.langStore.lang === 'ru'
+                ? this.language.about.ru
+                : this.language.about.en
+            }}
+        </p>
     </div>
 </template>
 
 <script>
+
+import {useLangStore} from "@/store/langStore";
+import {mapStores} from "pinia";
+
 export default {
-    name: "About"
+    name: "About",
+    computed: {
+        ...mapStores(useLangStore)
+    },
+    data() {
+        return {
+            language: window.language
+        }
+    },
 }
 </script>
 
@@ -15,6 +31,9 @@ export default {
 .about {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
+    margin-top: 2rem;
+    text-align: start;
+    margin-bottom: 3rem;
 }
 </style>

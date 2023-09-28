@@ -11,8 +11,7 @@ export default {
 <style scoped>
 .delimiter {
     width: 75%;
-    margin: 100px auto;
-    padding: 0px;
+    margin: 50px auto;
     background: white;
     color: #20007B;
 }

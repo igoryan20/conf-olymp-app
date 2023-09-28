@@ -1,29 +1,39 @@
+@import "bootstrap";
+
 @font-face {
-    font-family: "Montserrat Alternates";
-    src: url("../fonts/Montserrat Alternates/MontserratAlternates-Regular.ttf");
+    font-family: "Oswald";
+    src: url("../fonts/Oswald.ttf");
 }
 
 /* Set styles for the body */
 * {
-    font-family: "Montserrat Alternates", sans-serif;
+    font-family: "Oswald", sans-serif;
 }
 
 h1, h2, h3, h4, h5, label {
-    font-weight: bold;
-    color: #20007B;
+    /*font-weight: bold;*/
+    /*color: #3E7C23;*/
 }
 
 p {
-    color: #316BFF;
+    font-size: 14pt;
+}
+
+h1 {
+    color: #51A230;
 }
 
 input {
-    border-radius: 20px;
-    border-color: #20007B;
+    /*border-radius: 20px;*/
+    /*border-color: #20007B;*/
 }
 
 input:focus {
-    border-color: #316BFF;
+    /*border-color: #316BFF;*/
+}
+
+.mtrem-10 {
+    margin-top: 10rem;
 }
 
 

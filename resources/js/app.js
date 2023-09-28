@@ -9,6 +9,13 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+import 'bootstrap/dist/js/bootstrap.min'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './lang'
+
+import $ from 'jquery';
+window.$ = $;
+
 library.add(faCircle);
 
 const pinia = createPinia()

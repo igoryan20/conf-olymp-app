@@ -1,21 +1,9 @@
 <template>
     <div class="registration">
-        <h2>Присоединяйтесь к нашему сообществу</h2>
-        <p>Зарегестрируйтесь сейчас, чтобы получить доступ к эксклюзивным учебным ресурсам и к общению с другими студентами!</p>
         <form @submit.prevent="register" class="registration-form">
-            <div class="flex row">
-                <div class="form-group">
-                    <label for="name">Имя</label>
-                    <input type="text" id="name" v-model="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="surname">Фамилия</label>
-                    <input type="text" id="surname" v-model="surname" required>
-                </div>
-                <div class="form-group">
-                    <label for="middlename">Отчество</label>
-                    <input type="text" id="middlename" v-model="middlename">
-                </div>
+            <div class="form-group">
+                <label for="username">ФИО</label>
+                <input type="text" id="username" v-model="username" required>
             </div>
             <div class="form-group">
                 <label for="username">Имя пользователя</label>
@@ -33,9 +21,16 @@
                 <label for="confirm-password">Подтвердите пароль:</label>
                 <input type="password" id="confirm-password" v-model="password_confirmation" required>
             </div>
-            <CButton type="submit" class="primary">Зарегестрироваться</CButton>
-            <div class="mt-4">
+            <div class="d-flex justify-content-end">
+                <CButton type="submit" class="secondary">Зарегестрироваться</CButton>
+            </div>
+            <div class="mt-4 d-flex justify-content-center">
                 <p>Уже есть аккаунт? <router-link to="/login">Войдите</router-link></p>
+            </div>
+            <div>
+                <p class="black">
+                    Отправляя данную форму, я подписываю <span>Согласие об использовании персональных данных</span>
+                </p>
             </div>
         </form>
     </div>
@@ -90,9 +85,10 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem;
-    font-family: Arial, sans-serif;
-    color: #333;
+}
+
+.registration-form {
+    margin-top: 10rem;
 }
 
 h2 {
@@ -104,16 +100,15 @@ h2 {
 p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    color: #51A230;
 }
 
-.registration-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #ccc;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+a {
+    color: #51A230;
+}
+
+a:hover {
+    color: #3E7C23;
 }
 
 .form-group {
@@ -128,20 +123,29 @@ label {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
+    color: #3E7C23;
 }
 
 input {
     font-size: 1.2rem;
     padding: 0.5rem;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
+    border: 1px solid #3E7C23;
     box-sizing: border-box;
+    width: 100%;
 }
 
 input:focus {
     outline: none;
-    border-color: #0077cc;
-    box-shadow: 0 0 0 2px rgba(0, 119, 204, 0.2);
+    border-color: #3E7C23;
+}
+
+span {
+    cursor: pointer;
+    color: #51A230;
+}
+
+.black {
+    color: black;
 }
 </style>
